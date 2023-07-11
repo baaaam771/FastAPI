@@ -21,3 +21,6 @@ class Answer(Base):
     create_date = Column(DateTime, nullable=False)
     question_id = Column(Integer, ForeignKey("question.id"))
     question = relationship("Question", backref="answers")
+    # 답변 모델에서 질문 모델을 참조
+    # relationship으로 question 속성을 생성하면 
+    # 답변 객체(예: answer)에서 연결된 질문의 제목을 answer.question.subject처럼 참조가능
